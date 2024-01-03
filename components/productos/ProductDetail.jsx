@@ -1,5 +1,4 @@
-import Boton from "../ui/Boton";
-import Counter from "../ui/Counter";
+import Image from "next/image";
 import GoBack from "../ui/GoBack"
 import QtySelector from "./QtySelector";
 
@@ -8,9 +7,9 @@ import QtySelector from "./QtySelector";
 
 const ProductDetail = async ({ id }) => {
 
-    const item = await fetch(``, {
-        cache: 'no-store'
-    }).then(res => res.json())
+  const item = await fetch(`http://${process.env.VERCEL_URL}/api/product/${id}`, {
+    cache: 'no-store'
+  }).then(res => res.json())
 
     return(
         <>
